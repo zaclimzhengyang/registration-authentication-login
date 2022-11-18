@@ -1,0 +1,19 @@
+JpaRepository is a JPA (Java Persistence API) specific extension of Repository.
+It contains the full API of CRUDRepository and PagingAndSortingRepository.
+So it contains API for basic CRUD operations and also API for pagination and sorting.
+
+public interface DepartmentRepository extends JpaRepository<Department, Long> {}
+
+There are a few methods as given below
+1. saveAll(): Saves all given entities
+<S extends T> List<S> saveAll(Iterable<S> entities)
+
+2. getById(): Returns a reference to the entity with the given identifier.
+T getById(ID id)
+
+
+3. flush(): Flush all pending changes to the database
+void flush()
+
+4. saveAndFlush(): Saves an entity and flushes changes instantly.
+<S extends T> S saveAndFlush(S entity)

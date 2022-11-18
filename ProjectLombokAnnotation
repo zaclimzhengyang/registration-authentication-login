@@ -1,0 +1,6 @@
+@NoArgsConstructor will generate a constructor with no parameters.
+If this is not possible (because of final fields), a compiler error will result instead
+Unless element force = true is used, then all final fields are initialized with 0/ false/ null.
+
+@AllArgsConstructor generates a constructor with 1 parameter for each field in your class.
+Fields marked with @NonNull result in null checks on those parameters

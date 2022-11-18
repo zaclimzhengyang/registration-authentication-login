@@ -1,0 +1,17 @@
+A class extends another class
+An interface extends another interface
+BUT
+A class implements an interface
+
+extends is for when inheriting from a base class (i.e. extending its functionality)
+implements is for when implementing an interface
+
+
+THEN how does interface differ from class?
+- an interface can never be instantiated
+- members of an interface are always declared as public
+- contains abstract method i.e. methods without the body
+- another class to implements the keyword
+- cannot contain final or static method
+- cannot have constructors
+- can extend any number of interfaces but cannot implement any interface

@@ -1,0 +1,83 @@
+/**
+ * TODO: Read up the documentation on these priority annotations
+ * - AllArgsConstructor
+ * - Repository
+ * - Transactional
+ * - NoRepositoryBean
+ * - Indexed
+ *
+ * TODO: Read up on these spring interfaces
+ * - JpaRepository
+ *
+ * Q: What annotations did we need for infering a class that implements AppUserRepository
+ */
+
+Annotations are used to provide supplemental information about a program/
+- it starts with @
+- it does not change the action of a compiled program
+- it helps to associate metadata (information) to the program elements
+i.e. instance variables, constructors, methods, classes ,etc
+- it is not pure comments as it can change the way a program is
+treated by the compiler.
+- it basically is used to provide additional information, so could be
+an alternative to XML and Java marker interfaces.
+
+Purpose of annotations
+- it provides information for the compiler.
+- it can be used by the compiler to detect errors or suppress warnings.
+
+
+@AllArgsConstructor annotation generates a constructor with one parameter for every field in the class.
+However, the annotatio won't generate a parameter for the static and initialized final fields.
+
+
+@Entity and @Id (used in AppUser.java)
+The @Entity annotation specifies that the class is an entity
+and is mapped to a database table.
+
+@Id annotation specifies the primary key of an entity and
+
+@GeneratedValue provides for the specification of generation strategies for the
+values of primary keys
+
+@SequenceGenerator is used to control how database sequence is mapped.
+'allocationSize' is a number after which the datbase query will be made again to
+get the next database sequence value
+'name' element is compulsory
+
+@GeneratedValue is used to automatically generate the primary key value
+There are four generation types: AUTO, IDENTITY, SEQUENCE, and TABLE
+IDENTITY Generation - means they are auto-incremented.
+
+
+@NoRepositoryBean annotation to exclude repository interfaces from being picked and thus in consequence getting
+an instance being created.
+This will typically be used when providing an extended base interface for all repositories in combination
+with a custom repository base class to implement methods declared in tht itermediate interface.
+In this case you will typically derive your concrete repository interfaces from the intermediate one but dont want to
+create a Spring bean for the intermediate interface
+
+
+@Override informs the compiler that the element is meant to override
+an element declared in a superclass.
+
+
+@Repository is a Spring annotation that indicates that the decorated class is a repository.
+A repository is a mechanism for encapsulating storage, retrieval, and search
+behaviour which emulates a collection of objects.
+
+
+@Service is used to mark the class as a service provider.
+So overall @Service annotation is used with classes that provide some business functionalities.
+Spring context will autodetect these classes when annotation-based configuration and
+classpath scanning is used.
+*
+According to documentaion @Repository , @Service , @Controller are all synonyms.
+They all are just specializations of @Component annotation. So, generally, they can be used one instead of other.
+
+
+@Transactional
+rollbackFor and rollBackForClassName - define one or more Throwable classes for which the current transaction will be
+rolled back. By default, a transaction is rolled back if a RuntimeException or an Error is thrown, but not if it throws
+a checked Exception.
+@Transactional(readOnly = true) > ReadOnly DataSource

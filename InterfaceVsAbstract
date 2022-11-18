@@ -1,0 +1,28 @@
+In java, an interface specifies the behaviour of a class by providing an abstract type.
+An interface can be defined as a container that stores the signatures of the methods
+to be implement in the code segment
+Interface is mainly used for these 3 reasons:
+1. Total Abstraction
+- Method signatures make an interface achieve complete Abstraction by hiding the method implementation from the user
+2. Multiple inheritance
+The process of multiple inheritances is impossible as the conventional way of inheriting multiple parent classes results in profuond ambiguity.
+3. Loose-coupling
+Using an interface, we define the method separately and the signature separately.
+
+interface <Interface Name> {
+// Declare constant fields;
+// Declare Methods;
+// Default Methods;
+}
+
+Interface can only have final static variable, an interface can never change its own state.
+Abstract class can have any kind of instance or static variable, mutable or immutable.
+
+An interface can extends multiple interfaces,
+Abstract class can only extends one abstract class
+
+An interface can be implemented using the implements keyword,
+Abstract class can only be extended using extends
+
+An interface cannot have constructor while
+Abstract class can have constructor

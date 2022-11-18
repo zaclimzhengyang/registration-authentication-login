@@ -1,0 +1,21 @@
+1. Run DemoApplication
+2. Open Terminal and start maildev
+3. Open Postman and post (sign up user)
+    {
+        "firstName": "C2",
+        "lastName": "Tan",
+        "email": "c7tan@hotmail.com",
+        "password": "password",
+        "testColumn": "testInput"
+    }
+4. Go to http://localhost:8080/
+    'User is disabled'
+4. Open Terminal and start and login to psql
+    \c registration
+    SELECT * FROM app_user;
+    SELECT * FROM confirmation_token;
+5. Go to http://localhost:1080/#/
+    Click on the new email and verify
+6. Go back to http://localhost:8080/
+    'Whitelabel Error Page'
+    Shows that able to log in
